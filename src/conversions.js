@@ -1,0 +1,1 @@
+export const gramsToLbs = grams => grams * 0.002205;
