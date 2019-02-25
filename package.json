@@ -7,7 +7,8 @@
     "test": "jest --watch --env=jsdom",
     "build:clean": "rimraf dist",
     "build": "npm run build:clean && npm run build:babel",
-    "build:babel": "babel src/ --out-dir dist/ --ignore '**/*.test.js'"
+    "build:babel": "babel src/ --out-dir dist/ --ignore '**/*.test.js'",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "author": "Atle Frenvik Sveen",
   "license": "BSD-3-Clause",
