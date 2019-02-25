@@ -1,6 +1,9 @@
 import isNumber from '../util/isNumber';
 import roundToDecimals from '../util/roundToDecimals';
 
+/*
+    Taken from http://www.homebrewtalk.com/f13/estimate-final-gravity-32826/#post322639
+*/
 
 const getFg = (og, avgAttenuation) => ((og - 1) - ((og - 1) * (avgAttenuation / 100)) + 1);
 
