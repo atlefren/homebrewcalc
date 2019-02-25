@@ -1,11 +1,16 @@
 import isNumber from '../util/isNumber';
 
+/*
+Thinseth equation, Palmer "How to brew" p 58
+*/
+
 const fG = (g) => 1.65 * Math.pow(0.000125, (g - 1));
 
 const fT = (t) => (1 - Math.pow(Math.E, (-0.04 * t))) / 4.15;
 
-//Thinseth equation, Palmer "How to brew" p 58
 const computeUtilization = (g, t) => fG(g) * fT(t);
+
+
 
 const computeBitternessForHop = (hop, og, volume) => {
     if (!isNumber(hop.quantity) || !isNumber(hop.alphaAcid) || !isNumber(hop.boilTime)) {
