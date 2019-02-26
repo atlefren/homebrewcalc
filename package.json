@@ -1,17 +1,27 @@
 {
-  "name": "brewcalc",
-  "version": "1.0.0",
+  "name": "homebrewcalc",
+  "version": "1.0.1",
   "description": "A library for homebrewing calculations",
+  "keywords": ["homebrewing"],
+  "author": "Atle Frenvik Sveen",
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/atlefren/homebrewcalc/blob/master/README.md",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/atlefren/homebrewcalc.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/atlefren/homebrewcalc/issues"
+  },
   "main": "dist/index.js",
   "scripts": {
     "test": "jest --watch --env=jsdom",
     "build:clean": "rimraf dist",
+    "build:test": "jest --env=jsdom",
     "build": "npm run build:clean && npm run build:babel",
     "build:babel": "babel src/ --out-dir dist/ --ignore '**/*.test.js'",
-    "prepublishOnly": "npm run test && npm run build"
+    "prepublishOnly": "npm run build:test && npm run build"
   },
-  "author": "Atle Frenvik Sveen",
-  "license": "BSD-3-Clause",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
